@@ -17,6 +17,7 @@ GPU: smth that can handle a recording and can open more than 1 chrome tab
 CPU: smth that can handle a recording and can open more than 1 chrome tab
 
 Windows: [.NET Desktop Runtime 9.0.5](https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/9.0.5/windowsdesktop-runtime-9.0.5-win-x64.exe)
+
 Linux: **sudo snap install dotnet-sdk --channel 8.0/stable** (.NET 9.0 is'nt avalible currently for Linux check this URL -> [.NET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-snap-sdk)) | u may need to rebuild it on an older .NET Version like [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) to get work on Linux 
 
 #
