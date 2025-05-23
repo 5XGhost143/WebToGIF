@@ -47,7 +47,7 @@ class Program
         Console.WriteLine("[+] Loading config...");
         var json = await File.ReadAllTextAsync(configFile);
         var configLoaded = JsonSerializer.Deserialize<Config>(json) ?? new Config();
-        Console.WriteLine($"[i] Loaded URL from config: {configLoaded.Url}");
+        Console.WriteLine($"[i] Loaded URL from config: {configLoaded.Url}"); 
 
         Console.WriteLine("[+] Starting BrowserFetcher to download Chromium (if needed)...");
         var browserFetcher = new BrowserFetcher();
@@ -59,8 +59,8 @@ class Program
         Console.WriteLine("[+] Opening new page...");
         using var page = await browser.NewPageAsync();
 
-        Console.WriteLine("[+] Setting viewport to 680x240...");
-        await page.SetViewportAsync(new ViewPortOptions { Width = 680, Height = 240 });
+        Console.WriteLine("[+] Setting viewport to 680x240..."); 
+        await page.SetViewportAsync(new ViewPortOptions { Width = 680, Height = 240 }); // perfect Resolution for discord background pfp, but u can change it if u want
 
         Console.WriteLine($"[+] Navigating to {configLoaded.Url} ...");
         await page.GoToAsync(configLoaded.Url);
