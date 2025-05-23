@@ -18,6 +18,6 @@ CPU: smth that can handle a recording and can open more than 1 chrome tab
 
 Windows: [.NET Desktop Runtime 9.0.5](https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/9.0.5/windowsdesktop-runtime-9.0.5-win-x64.exe)
 
-Linux: **sudo apt-get install -y dotnet-sdk-9.0** (in the most times, but if it doesn't work use this [Guide](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website))
+Linux: **sudo apt-get install -y dotnet-sdk-9.0** (in the most of the time, but if it doesn't work use this [Guide](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website))
 
 #
