@@ -48,10 +48,6 @@
               "target": "Package",
               "version": "[14.6.0, )"
             },
-            "Microsoft.Web.WebView2": {
-              "target": "Package",
-              "version": "[1.0.3240.44, )"
-            },
             "PuppeteerSharp": {
               "target": "Package",
               "version": "[20.1.3, )"

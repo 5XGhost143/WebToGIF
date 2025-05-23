@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.6.0" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3240.44" />
     <PackageReference Include="PuppeteerSharp" Version="20.1.3" />
   </ItemGroup>
 

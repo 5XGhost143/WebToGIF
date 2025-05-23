@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebToGIF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d349d19701be90c2bc68bc4807ca51c533e9de43")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebToGIF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebToGIF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
