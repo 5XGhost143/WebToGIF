@@ -69,7 +69,7 @@ class Program
         await Task.Delay(3000);
 
         var frames = new List<byte[]>();
-        Console.WriteLine("[+] Starting to capture frames for GIF (25 frames)...");
+        Console.WriteLine("[+] Starting to capture frames for GIF...");
 
         for (int i = 0; i < 25; i++)
         {
