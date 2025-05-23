@@ -20,26 +20,34 @@ class Program
 
         if (!Directory.Exists(configDir))
         {
-            Console.WriteLine("[+] Creating config directory...");
             Directory.CreateDirectory(configDir);
-        }
-
-        Config config;
-        if (!File.Exists(configFile))
-        {
-            Console.WriteLine("[!] Config file not found, creating default config...");
-            config = new Config();
+            var config = new Config();
             var defaultJson = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(configFile, defaultJson);
-            Console.WriteLine($"[i] Default config written to {configFile}. Please edit this file to change the URL.");
+
+            Console.WriteLine($"Config folder and default config.json created at '{configFile}'.");
+            Console.WriteLine("Please edit the config.json to set the URL you want to screenshot.");
+            Console.WriteLine("The program will exit in 5 seconds...");
+            await Task.Delay(5000);
+            return; 
         }
-        else
+
+        if (!File.Exists(configFile))
         {
-            Console.WriteLine("[+] Loading config...");
-            var json = await File.ReadAllTextAsync(configFile);
-            config = JsonSerializer.Deserialize<Config>(json) ?? new Config();
-            Console.WriteLine($"[i] Loaded URL from config: {config.Url}");
+            var config = new Config();
+            var defaultJson = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
+            await File.WriteAllTextAsync(configFile, defaultJson);
+            Console.WriteLine($"Default config.json created at '{configFile}'.");
+            Console.WriteLine("Please edit the config.json to set the URL you want to screenshot.");
+            Console.WriteLine("The program will exit in 5 seconds...");
+            await Task.Delay(5000);
+            return; 
         }
+
+        Console.WriteLine("[+] Loading config...");
+        var json = await File.ReadAllTextAsync(configFile);
+        var configLoaded = JsonSerializer.Deserialize<Config>(json) ?? new Config();
+        Console.WriteLine($"[i] Loaded URL from config: {configLoaded.Url}");
 
         Console.WriteLine("[+] Starting BrowserFetcher to download Chromium (if needed)...");
         var browserFetcher = new BrowserFetcher();
@@ -54,8 +62,8 @@ class Program
         Console.WriteLine("[+] Setting viewport to 680x240...");
         await page.SetViewportAsync(new ViewPortOptions { Width = 680, Height = 240 });
 
-        Console.WriteLine($"[+] Navigating to {config.Url} ...");
-        await page.GoToAsync(config.Url);
+        Console.WriteLine($"[+] Navigating to {configLoaded.Url} ...");
+        await page.GoToAsync(configLoaded.Url);
 
         Console.WriteLine("[+] Waiting 3 seconds for page to load...");
         await Task.Delay(3000);
@@ -67,7 +75,6 @@ class Program
         {
             var screenshot = await page.ScreenshotDataAsync();
             frames.Add(screenshot);
-            Console.WriteLine($"    Captured frame {i + 1}/25");
             await Task.Delay(80);
         }
 
@@ -80,7 +87,7 @@ class Program
         foreach (var imgData in frames)
         {
             var image = new MagickImage(imgData);
-            image.AnimationDelay = 9; 
+            image.AnimationDelay = 9;
             gif.Add(image);
         }
 
