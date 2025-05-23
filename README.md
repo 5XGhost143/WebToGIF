@@ -20,4 +20,6 @@ Windows: [.NET Desktop Runtime 9.0.5](https://builds.dotnet.microsoft.com/dotnet
 
 Linux: **sudo apt-get install -y dotnet-sdk-9.0** (in the most of the time, but if it doesn't work use this [Guide](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website) and install the SDK)
 
+MacOS: not planned bc I don't like MacOS and don’t have access to a Mac for building and testing.
+
 #
