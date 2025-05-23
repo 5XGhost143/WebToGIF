@@ -1,8 +1,8 @@
 # WebToGIF
 
-**Requirements (auto install with build):**
- - Magick.NET
- - PuppeteerSharp
+**Requirements (**will be auto installed with build):**
+ - **Magick.NET
+ - **PuppeteerSharp
  - [.NET 9.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 
 
